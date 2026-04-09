@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>회원가입</h1>
+<hr>
+
+ID : 
+<input type="text" id="username" placeholder="아이디를 입력해주세요">
+<button type="button" onclick="checkUsername()">아이디 중복 확인</button><br>
+
+Password : 
+<input type="password" id="password" placeholder="비밀번호를 입력해주세요"><br>
+
+이름 : 
+<input type="text" id="name"><br>
+
+<button type="button" onclick="signup()">회원가입</button>
+
+<div id="result"></div>
+
+<script src="/js/signup.js"></script>
+</body>
+</html>
