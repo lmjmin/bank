@@ -12,17 +12,23 @@ function login(){
 		    password: password
 		  })
 		})
-		.then(response => response.json())
+		.then(response => 		 {
+		    if (!response.ok) {  
+		        throw new Error("로그인 실패");
+		    }
+		    return response.json();
+		})
 		.then(data => {
 			console.log('Success: ',data);
 			localStorage.setItem('accessToken', data.token);
 
-			document.getElementById("result").innerText = data.message;		
+			document.getElementById("result").innerText = data.message;	
+			window.location.href = "/bank/main";	
 			
 		})
 		.catch(error => {
 			console.error('로그인 실패:', error);
-			document.getElementById("result").innerText = "로그인 요청 중 오류 발생";
+			document.getElementById("result").innerText = "아이디나 비밀번호가 틀렸습니다.";
 		});
 	
 }

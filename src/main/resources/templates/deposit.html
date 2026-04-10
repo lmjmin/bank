@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>입금</title>
+</head>
+<body>
+<h1>입금하기</h1>
+<hr>
+<div>
+    <p>내 계좌번호: <span id="accountNumber"></span></p>
+</div>
+<br>
+금액: <input type="number" id="amount" placeholder="금액 입력"><br><br>
+<button onclick="deposit()">입금</button>
+<div id="result"></div>
+<script src="/js/deposit.js"></script>
+</body>
+</html>

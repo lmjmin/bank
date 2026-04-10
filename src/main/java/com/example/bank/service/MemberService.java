@@ -1,7 +1,5 @@
 package com.example.bank.service;
 
-import java.util.UUID;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,8 +47,6 @@ public class MemberService {
         account.setAccountNumber(createAccountNumber());
         account.setBalance(0L);
         account.setMember(savedMember);
-
-        // 계좌 동결 상태 필드 
         account.setStatus(Account.Status.ACTIVE);
 
         // 5. 계좌 저장
@@ -60,7 +56,11 @@ public class MemberService {
     }
 
     private String createAccountNumber() {
-        return UUID.randomUUID().toString().replace("-", "").substring(0, 12);
+        String part1 = String.format("%03d", (int)(Math.random() * 1000));
+        String part2 = String.format("%03d", (int)(Math.random() * 1000));
+        String part3 = String.format("%06d", (int)(Math.random() * 1000000));
+        
+        return part1 + "-" + part2 + "-" + part3;
     }
     
     public Member findByUsername(String username) {

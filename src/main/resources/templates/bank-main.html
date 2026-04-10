@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bank Main</title>
+</head>
+<body>
+<h1>내 계좌</h1>
+<hr>
+<div>
+    <p>계좌번호: <span id="accountNumber"></span></p>
+    <p>잔액: <span id="balance"></span> 원</p>
+</div>
+<hr>
+<h2>메뉴</h2>
+<button onclick="location.href='/bank/deposit'">입금</button>
+<button onclick="location.href='/bank/transfer'">송금</button>
+<button onclick="location.href='/bank/transactions'">거래내역</button>
+<hr>
+<h2>최근 거래</h2>
+<ul id="transactionList"></ul>
+<script src="/js/bank-main.js"></script>
+
+</body>
+</html>

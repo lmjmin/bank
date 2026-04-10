@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>송금</title>
+</head>
+<body>
+<h1>송금하기</h1>
+<hr>
+<div>
+    <p>내 계좌번호: <span id="senderAccount"></span></p>
+</div>
+<br>
+받는 계좌번호:
+<input type="text" id="receiverAccountNumber" placeholder="계좌번호 입력"><br><br>
+금액:
+<input type="number" id="amount" placeholder="금액 입력"><br><br>
+<button onclick="transfer()">송금</button>
+<div id="result" style="color: red"></div>
+<script src="/js/transfer.js"></script>
+</body>
+</html>
